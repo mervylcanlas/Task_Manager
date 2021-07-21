@@ -1,0 +1,68 @@
+.reg-wrapper {
+    .register {
+        display: grid;
+        grid-template-columns: 2fr 5fr;
+        width: 1200px;
+        height: calc(100vh - 160px);
+        box-sizing: border-box;
+        padding: 0px 4rem 0px 4rem;
+        //border: 1px solid white;
+        .quote {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            //border: 1px solid white;
+            div {
+                //border: 1px solid white;
+                width: 100%;
+            }
+            .norm {
+                font-size: 2.5rem;
+            }
+            .strong {
+                font-size: 8rem;
+                font-weight: 800;
+            }
+            .author {
+                margin-top: 2rem;
+                font-size: 2rem;
+                text-align: right;
+                font-style: italic;
+            }
+        }
+        .register_section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: left;
+            color: white;
+            h2 {
+                font-weight: 100;
+            }
+            form {
+                font-size: 0.8rem;
+                text-align: left;
+                input {
+                    box-sizing: border-box;
+                    width: 100%;
+                    margin: 5px 0px 25px 0px;
+                    padding: 0.5rem;
+                }
+                input[type=email],input[type=password] {
+                    background-color: lightgreen;
+                }
+                .submit {
+                    display: flex;
+                    justify-content: center;
+                    margin: auto;
+                    input[type=submit] {
+                        padding: 0.5rem;
+                        font-size: 0.8rem;
+                        width: 100px;
+                    }
+                }
+            }
+        }
+    }
+}

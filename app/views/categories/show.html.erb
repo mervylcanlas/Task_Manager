@@ -1,0 +1,85 @@
+<div class = 'cat_show'>
+    <div class = 'cat_info'>
+        <span class = 'cat_header'>
+            <span class = 'cat_title'>
+                <%= @category.title %>
+            </span>
+            <span>
+                <span>
+                    <%= link_to "Edit", edit_category_path(@category) %>
+                </span>
+                <span>
+                    /
+                </span>
+                <span>
+                    <%= link_to "Delete", category_path(@category), method: :delete, data: { confirm: "Are you sure?" } %>
+                </span>
+            </span>
+        </span>
+        <span class = 'cat_des'>
+            <%= @category.details %>
+        </span>
+    </div>
+    <div class = 'tasks'>
+        <% if @category.tasks.present? %>
+            <% @category.tasks.each do |task| %>
+                <div class = 'task'>
+                    <div class = 'task_head'>
+                        <div class = 'task_title'>
+                            <%= task.title %>
+                        </div>               
+                        <div>
+                            <span>
+                                <%= link_to "Edit", edit_category_task_path(@category,task) %>
+                            </span>
+                            <span>
+                                /
+                            </span>
+                            <span>
+                                <%= link_to 'Delete', [task.category, task], method: :delete, data: { confirm: "Are you sure?" } %>
+                            </span>
+                        </div>
+                    </div>
+                    <div class = 'task_des'>
+                        <div>
+                            <strong>Description:</strong>
+                        </div>
+                        <div>
+                            <%= task.description %>
+                        </div>
+                        <div>
+                            <strong>Deadline:</strong>
+                        </div>
+                        <div>
+                            <%= task.deadline %>
+                        </div>
+                    </div>
+                </div>
+            <% end %>
+        <% else %>
+            <div class = "task_message">
+                There are no task created for this category yet
+            </div>
+        <% end %>
+    </div>
+    <div class = 'add_task'>
+        <div class = 'add_task_head'>Create Task for this Category</div>
+        <%= form_with model: [ @category, @category.tasks.build ] do |form| %>
+            <div>
+                <%= form.label :title %><br>
+                <%= form.text_field :title %>
+            </div>
+            <div>
+                <%= form.label :description %><br>
+                <%= form.text_area :description %>
+            </div>
+            <div>
+                <%= form.label :deadline %><br>
+                <%= form.date_field :deadline %>
+            </div>
+            <div class = 'submit'>
+                <%= form.submit %>
+            </div>
+        <% end %>
+    </div>
+</div>

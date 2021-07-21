@@ -1,0 +1,43 @@
+// Place all the styles related to the Tasks controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.edit_task {
+    width: 60%;
+    margin: auto;
+    box-sizing: border-box;
+    padding: 4rem;
+    text-align: left;
+    min-height: calc(100vh - 160px);
+    .edit_cat_head {
+        width: 100%;
+        font-size: 1.5rem;
+        text-align: center;
+        margin: auto;
+        margin-bottom: 2rem;
+    }
+    form {
+        text-align: left;
+        margin: auto;
+        input[type=text],textarea,input[type=date] {
+            background-color: lightgreen;
+            width: 100%;
+            margin: 0.5rem 0 1rem 0;
+            box-sizing: border-box;
+            padding: 0.5rem;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        textarea {
+            height: 200px;
+        }
+        .submit {
+            display: flex;
+            justify-content: center;
+            margin: auto;
+            margin-top: 2rem;
+            input[type=submit] {
+                padding: 0.5rem;
+                font-size: 0.8rem;
+            }
+        }
+    }
+}

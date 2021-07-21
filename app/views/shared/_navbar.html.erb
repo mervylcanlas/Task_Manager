@@ -1,0 +1,36 @@
+<div class = 'nav-wrapper'>
+    <div class = 'navbar'>
+        <span>
+            <h1>
+                <%= link_to ".methodify!", root_path, class: 'page_title' %>
+            </h1>
+        </span>
+        <span class = "nav">
+            <% if user_signed_in? %>
+                <span class = "field">
+                    <%= link_to 'Dashboard', root_path, class: 'nav-link' %>
+                </span>
+                <span class = "field">
+                    <%= link_to 'Categories', categories_path, class: 'nav-link' %>
+                </span>
+                <span class = "field">
+                    <%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+                </span>
+            <% else %>
+                <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                    <span class="field">
+                        <%= f.label :email %>
+                        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+                    </span>
+                    <span class = "field">
+                        <%= f.label :password %>
+                        <%= f.password_field :password, autocomplete: "current-password" %>
+                    </span>
+                    <span class = "button">
+                        <%= f.submit "Log in" %>
+                    </span>
+                <% end %>
+            <% end %>
+        </span>
+    </div>
+</div>

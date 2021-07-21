@@ -1,0 +1,30 @@
+<div class = 'home'>
+    <% if current_user.present? %>
+        <% if @tasks.empty? %>
+            <h1><i>There are no urgent task for today!<i></h1>
+        <% else %>
+            <div class = 'urgent_task'>
+                <div class = 'urgent_task_head'>
+                    Urgent tasks today
+                </div>
+                <% @tasks.each do |task| %>
+                    <div class = 'task'>
+                        <div class = 'task_head'>
+                            <div class = 'task_title'>
+                                <%= task.title %>
+                            </div>
+                            <div>
+                                <%= task.deadline %>
+                            </div>
+                        </div>
+                        <div class = 'task_des'>
+                            <div>
+                                <%= task.description %>
+                            </div>
+                        </div>
+                    </div>
+                <% end %>
+            </div>
+        <% end %>
+    <% end %>
+</div>

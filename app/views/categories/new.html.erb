@@ -1,0 +1,24 @@
+<div class = 'new_cat'>
+    <div class = 'new_cat_head'>
+        Create New Category
+    </div>
+    <%= form_with model: @category do |form| %>
+        <div>
+            <%= form.label :title %><br>
+            <%= form.text_field :title %>
+            <% @category.errors.full_messages_for(:title).each do |message| %>
+            <div><%= message %></div>
+            <% end %>
+        </div>
+        <div>
+            <%= form.label :details %><br>
+            <%= form.text_area :details %><br>
+            <% @category.errors.full_messages_for(:details).each do |message| %>
+            <div><%= message %></div>
+            <% end %>
+        </div>
+        <div class = 'submit'>
+            <%= form.submit %>
+        </div>
+    <% end %>
+</div>

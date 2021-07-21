@@ -1,0 +1,20 @@
+<div class = 'edit_cat'>
+    <div class = 'edit_cat_head'>Edit "<%= @category.title %>"</div>
+
+    <%= form_with model: @category do |form| %>
+    <div>
+        <%= form.label :title %><br>
+        <%= form.text_field :title, readonly: true %>
+    </div>
+    <div>
+        <%= form.label :details %><br>
+        <%= form.text_area :details %><br>
+        <% @category.errors.full_messages_for(:details).each do |message| %>
+        <div><%= message %></div>
+        <% end %>
+    </div>
+    <div class = 'submit'>
+        <%= form.submit %>
+    </div>
+    <% end %>
+</div>

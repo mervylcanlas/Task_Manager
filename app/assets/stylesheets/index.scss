@@ -1,0 +1,52 @@
+// Place all the styles related to the Articles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+$mainfont: 'Roboto', sans-serif;
+
+body {
+    font-family: $mainfont;
+    text-align: center;
+    background-image: url("https://c.pxhere.com/images/ae/af/bbf9f06936e2f699556c3b1106de-1604439.jpg!d");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    .notice, .alert {
+        padding: 15px;
+        background-color: #777777;
+        color: white;
+        position: fixed;
+        z-index: 1;
+        top: 1.5%;
+        left: 50%;
+        width: 300px;
+        margin-left: -150px;
+        border-radius: 5px;
+        text-align: center;
+    }
+    .closebtn {
+        margin-left: 15px;
+        color: white;
+        font-weight: bold;
+        float: right;
+        font-size: 22px;
+        line-height: 20px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .closebtn:hover {
+        color: black;
+    }
+}
+
+.app {
+    width: 1200px;
+    margin: auto;
+    box-sizing: border-box;
+    color: white;
+    //border: 1px solid white;
+    background-color: rgba($color: #333333, $alpha: 0.8);
+    min-height: calc(100vh - 160px);
+}

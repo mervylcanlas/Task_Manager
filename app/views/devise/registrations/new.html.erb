@@ -1,0 +1,41 @@
+<div class = 'reg-wrapper'>
+  <div class = 'register'>
+    <div class = 'register_section'>
+      <h2>Start earning your HOURS, Sign up now!</h2>
+
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+
+        <div class="field">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password %>
+          <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "new-password" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password_confirmation %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+        </div>
+
+        <div class="submit">
+          <%= f.submit "Sign up" %>
+        </div>
+      <% end %>
+    </div>
+    <div class = 'quote'>
+      <div class = 'norm'>FOR EVERY</div>
+      <div class = 'strong'>MINUTE</div>
+      <div class = 'norm'>SPENT IN ORGANIZING, AN</div>
+      <div class = 'strong'>HOUR</div>
+      <div class = 'norm'>IS EARNED</div>
+      <div class = 'author'>- Benjamin Franklin</div>
+    </div>
+  </div>
+</div>

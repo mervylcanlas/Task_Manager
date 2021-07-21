@@ -1,0 +1,21 @@
+<div class = 'categories'>
+    <div>
+        <div class = 'cat_head'>
+            Categories
+        </div>
+        <% @category.each do |e| %>
+        <div class = 'category'>
+            <div class = 'cat_title'>
+                <%= link_to e.title, e %>
+            </div>
+            <div class = 'created_at'>
+                Created at: 
+                <%= e.created_at %>
+            </div>
+        </div>
+        <% end %>
+    </div>
+    <div class = 'new_cat_link'>
+        <%= link_to "Create New Category", new_category_path%>
+    </div>
+</div>
