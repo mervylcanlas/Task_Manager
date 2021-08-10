@@ -6,4 +6,11 @@
     height: 80px;
     bottom: 0;
     margin: auto;
+    div {
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
 }
